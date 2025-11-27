@@ -1,11 +1,11 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";       // YOU FORGOT THIS
+import { authOptions } from "@/lib/auth";       
 import Task from "@/models/Tasks";
 import { connectDB } from "@/lib/mongodb";
 
 // GET all tasks
 export async function GET() {
-  const session = await getServerSession(authOptions);  // AND THIS
+  const session = await getServerSession(authOptions); 
 
   if (!session) return Response.json([], { status: 401 });
 
@@ -20,7 +20,7 @@ export async function GET() {
 
 // CREATE task
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions);  // FIXED
+  const session = await getServerSession(authOptions);  
 
   if (!session)
     return Response.json({ error: "Unauthorized" }, { status: 401 });

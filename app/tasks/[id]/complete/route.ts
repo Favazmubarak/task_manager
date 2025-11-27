@@ -1,6 +1,6 @@
 // /app/api/tasks/[id]/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import Task from "@/models/Tasks"; // your mongoose Task model
+import Task from "@/models/Tasks";
 import { connectDB } from "@/lib/mongodb";
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
