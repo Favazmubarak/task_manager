@@ -14,7 +14,7 @@ export async function GET() {
   const tasks = await Task.find({ user: session.user.id }).sort({
     createdAt: -1,
   });
-
+  
   return Response.json(tasks);
 }
 
